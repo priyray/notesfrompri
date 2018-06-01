@@ -26,3 +26,6 @@ AssertThat(result, Is.InRange(101,200));
 Is.GreaterThanOrEqualTo()
 Is.LessThan()
 Ts.LessThanOrEqualTo()
+
+## Assert Nulls / Booleans
+AssertThat(sut.Name , Is.Not.Empty);
