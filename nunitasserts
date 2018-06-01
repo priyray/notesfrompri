@@ -58,3 +58,7 @@ Assert.That(sut.Weapons, Contains.Item("Long Bow"));
 
 //Should have one kind of sword
 Assert.That(sut.Weapons, Has.Some.ContainsSubstring("Sword"));
+
+// Should have 2 items ending with Bow 
+Assert.That(sut.Weapons, Has.Exactly(2).EndsWith("Bow"));
+
