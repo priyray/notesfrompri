@@ -33,3 +33,24 @@ AssertThat(sut.Name , Is.Null);
 AssertThat(sut.Name , Is.Not.Null);
 AssertThat(sut.IsNoobSetToTrue , Is.True);
 AssertThat(sut.IsNoobSetToTrue , Is.False); // Will fail 
+
+## Collections method 
+private void CreateStartingWeapons()
+{
+Weapons = new List<string>()
+{
+  "Short Sword",
+  "Short Bow",
+  "Long Bow",
+  
+  //"Long Bow"
+   //"Staff Of Wonder"
+  };
+}
+## Assert on collections 
+//Check an item is not empty
+var sut = new PlayerCharacter();
+Assert.That(sut.Weapons, Is.All.Not.Empty);
+//Check that the collection contains an item 
+Assert.That(sut.Weapons, Contains.Item("Long Bow"));
+Assert.That(sut.Weapons, Has.Some.ContainsSubstring("Sword"));
