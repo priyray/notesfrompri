@@ -104,7 +104,8 @@ public void ShouldHaveDeafultWeaponsInAlphabeticalOrder()
 Assert.That(player1, Is.SameAs(Player2))// Test fails
 
 ## Asserting on Object Types and Properties 
-
+----------------------------------------------------------------
+[Code]
 public class EnemyFactory
 {
   public object Create(bool isBoss)
@@ -113,9 +114,27 @@ public class EnemyFactory
     {
       return new BossEnemy();
     }
-    
     return new NormalEnemy();
-    
   }
 }
+
+[Test]
+public void ShouldCreateNormalEnemy()
+{
+  var sut = new EnemyFactory();
+  object enemy = sut.Create(false);
+  Assert.That(enemy, Is.TypeOf<NormalEnemy>());
+}
+
+  Assert.That(enemy, Is.InstanceOf<Enemy>());
+  Assert.That(enemy, Has.Property("ExtraPower"));
+
+##Asserting Exceptions are thrown
+Assert.That(()=> sut.Divide(200,0),Throws.Exception)
+Assert.That(()=> sut.Divide(200,0),Throws.TypeOf<DivideByZeroException>());
+Assert.That(()=> sut.Divide(200,2),Throws.TypeOf<ArgumentOutOfRangeException>());
+Assert.That(()=> sut.Divide(200,2),
+  Throws.TypeOf<ArgumentOutOfRangeException>()
+  .With.Matches<ArgumentOutOfRangeException>(x=> x.ParamName == "value"));
+
 
