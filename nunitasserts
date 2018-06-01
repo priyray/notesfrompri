@@ -1,0 +1,3 @@
+## String Equality Assert Examples 
+Assert.That(fullname, Is.EqualTo("Sarah Smith"));
+
