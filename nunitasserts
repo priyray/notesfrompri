@@ -1,3 +1,8 @@
 ## String Equality Assert Examples 
 Assert.That(fullname, Is.EqualTo("Sarah Smith"));
+Assert.That(fullname, Is.EqualTo("SARAH SMITH").IgnoreCase);
+Assert.That(fullname, Is.Not.EqualTo("Gentry Smith").IgnoreCase);
 
+## Numerical Equality Assert Examples - adding tolerance (plus or minua)
+Assert.That(result,Is.EqualTo(3.3).Within(o.01)); // test will pass if the result is 3.29 or 3.31
+Assert.That(result,Is.EqualTo(101).Within(1).Percent); // test will pass if the result within 1 percent
