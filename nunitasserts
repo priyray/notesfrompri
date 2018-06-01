@@ -47,10 +47,14 @@ Weapons = new List<string>()
    //"Staff Of Wonder"
   };
 }
+
 ## Assert on collections 
 //Check an item is not empty
 var sut = new PlayerCharacter();
 Assert.That(sut.Weapons, Is.All.Not.Empty);
+
 //Check that the collection contains an item 
 Assert.That(sut.Weapons, Contains.Item("Long Bow"));
+
+//Should have one kind of sword
 Assert.That(sut.Weapons, Has.Some.ContainsSubstring("Sword"));
