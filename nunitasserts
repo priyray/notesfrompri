@@ -20,4 +20,5 @@ AssertThat(result,Is.EqualTo(new DateTime(2000,1,1,0,0,0,1)).Within(1).Milliseco
 
 ## Asserting ranges 
 AssertThat(result, Is.GreaterThan(100));
+AssertThat(result, Is.InRange(101,200));
 
