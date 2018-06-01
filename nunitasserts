@@ -29,3 +29,7 @@ Ts.LessThanOrEqualTo()
 
 ## Assert Nulls / Booleans
 AssertThat(sut.Name , Is.Not.Empty);
+AssertThat(sut.Name , Is.Null);
+AssertThat(sut.Name , Is.Not.Null);
+AssertThat(sut.IsNoobSetToTrue , Is.True);
+AssertThat(sut.IsNoobSetToTrue , Is.False); // Will fail 
