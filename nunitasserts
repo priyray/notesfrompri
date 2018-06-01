@@ -6,3 +6,14 @@ Assert.That(fullname, Is.Not.EqualTo("Gentry Smith").IgnoreCase);
 ## Numerical Equality Assert Examples - adding tolerance (plus or minua)
 Assert.That(result,Is.EqualTo(3.3).Within(o.01)); // test will pass if the result is 3.29 or 3.31
 Assert.That(result,Is.EqualTo(101).Within(1).Percent); // test will pass if the result within 1 percent
+
+// Also available 
+Is.Positive // Is the number positive
+Is.Negative // Is the number negative
+Is.NaN // Is the number not a number
+
+
+## Date Time Equality
+AssertThat(result,Is.EqualTo(new DateTime(2000,1,1,0,0,0,0)));
+AssertThat(result,Is.EqualTo(new DateTime(2000,1,1,0,0,0,1)).Within(TimeSpan.FromMilliseconds(1))); // adding tolerance
+AssertThat(result,Is.EqualTo(new DateTime(2000,1,1,0,0,0,1)).Within(1).Milliseconds); //
